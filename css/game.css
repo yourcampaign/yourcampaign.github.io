@@ -5,3 +5,7 @@
   margin: auto;
   background-color: #000;
 }
+
+body {
+  overflow-y: hidden;
+}
