@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+  <title>Battle Hillary</title>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script type = "text/javascript" src = "./js/Player.js"></script>
+  <script type = "text/javascript" src = "./js/main.js"></script>
+  
+  <script type = "text/javascript" src = "./js/tempBoss.js"></script>
+  
+  <script type = "text/javascript" src = "./js/hillary.js"></script>
+  <link rel = "stylesheet" type = "text/css" href = "./css/hillary.css" />
+
+  
+  <link rel = "stylesheet" type = "text/css" href = "./css/battle.css" />
+  <link rel = "stylesheet" type = "text/css" href = "./css/game.css" />
+  <script>
+      //var player = new Player("Robert", 10, 5, 7, 6, 10, 3, 8, 3); 
+      //var enemy = new tempBoss("bernie", player);
+      //enemy.attack();
+  </script>
+  
+</head>
+
+<body>
+  
+<div class="game" style="background:url(./images/backgrounds/grass.png);background-size: cover;background-repeat: no-repeat;">
+    
+  <div class="screen">
+    <div class = "over">
+      <p id="demo"></p>
+    </div>
+    
+  <div class="opponent">
+    <div class="stats">
+      <div class="top">
+        
+        <div id = "opHp" class="hp-count">100</div>
+      </div>
+      <span class="name oname">
+        Hillary
+      </span>
+      <span class="level olevel">
+          3
+      </span>
+    </div>
+    <img class="oimage pokemon" src="./images/Hillary/sprite.gif" />
+  </div>
+  <div class="player">
+    <div class="stats">
+      <div class="top">
+        
+        <div id = "myHp" class="hp-count">100</div>
+      </div>
+      <span class="name pname">
+          You
+      </span>
+      <span class="level plevel">
+          3
+      </span>
+    </div>
+    <img class="pimage pokemon" src="" />
+  </div>
+</div>
+</div>
+<div class="box">
+  <div id = "message" class="message">
+    What should <span class="pname"></span> do?
+  </div>
+  <div class="actions">
+    <button onclick = "playerAttack(0)">Give Speech</button>
+    <button onclick = "playerAttack(1)">Shady Tweet</button>
+    <button onclick = "playerAttack(2)">Riot</button>
+    <button onclick = "playerAttack(3)">TV Commercial</button>
+  </div>
+  <div class = "continue">
+    <button onclick = "enemyAttack()">Continue</button>
+  </div>
+</div>
+</div>
+</body>

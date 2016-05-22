@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<head>
+  <title>Battle Bernie</title>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script type = "text/javascript" src = "./js/PlayerClass.js"></script>
+  <script type = "text/javascript" src = "./js/EnemyClass.js"></script>
+  <script type = "text/javascript" src = "./js/main.js"></script>
+
+  
+  <link rel = "stylesheet" type = "text/css" href = "./css/battle.css" />
+  <link rel = "stylesheet" type = "text/css" href = "./css/game.css" />
+  <script>
+      var player = new Player(getCookie("name"), getCookie("atkPow"), getCookie("def"), getCookie("evade"), getCookie("luck"), getCookie("health"));
+      var enemy = new Enemy("Bernie", 3, 5, 6, 2, 6, 1, [["Bern", 9, 9], ["Free College Tuition", 7, 11], ["Internet Support", -11, 10], ["Finger of Justice", 13, 7]]);
+  </script>
+</head>
+
+<body>
+<div class="game" style="background:url(./images/backgrounds/back5.png);background-size: cover;background-repeat: no-repeat;">
+    
+  <div class="screen">
+  <div class="opponent">
+    <div class="stats">
+      <div class="top">
+        
+        <div id = "opHp" class="hp-count"></div>
+      </div>
+      <span class="name oname">
+      </span>
+      <span class="level olevel">
+      </span>
+    </div>
+    <img class="oimage pokemon" src="./images/Bernie/sprite.gif" />
+  </div>
+  <div class="player">
+    <div class="stats">
+      <div class="top">
+        
+        <div id = "myHp" class="hp-count"></div>
+      </div>
+      <span class="name pname">
+      </span>
+      <span class="level plevel">
+      </span>
+    </div>
+    <img class="pimage pokemon" src="" />
+  </div>
+</div>
+</div>
+<div class="box">
+  <div id = "message" class="message">
+    What should <span class="pname"></span> do?
+  </div>
+  <div class="actions">
+    <button onclick = "player.attack(0, enemy)">Give Speech</button>
+    <button onclick = "player.attack(1, enemy)">Shady Tweet</button>
+    <button onclick = "player.attack(2, enemy)">Riot</button>
+    <button onclick = "player.attack(3, enemy)">TV Commercial</button>
+  </div>
+  <div class = "continue">
+    <button onclick = "player.cont()">Continue</button>
+  </div>
+</div>
+</div>
+<script>
+    $("#opHp").text(Math.round(enemy.hp));
+    $("#myHp").text(Math.round(player.hp));
+</script>
+<script>
+$("body").on("domChanged", function () {
+                location.replace("./cruz.html");
+            });
+</script>
+<script>
+  $( document ).ready(function() {
+    $( ".oname" ).text("Bernie");
+    $( ".olevel" ).text(2);
+    $( ".oimage").attr('src',"./images/Bernie/sprite.gif");
+    
+    $( ".pname" ).text(player.name);
+    $( ".plevel" ).text(2);
+    $( ".pimage").attr('src',"./images/Player/guybattle.gif");
+  });
+</script>
+
+</body>
+  <audio src="battle.mp3" autoplay="autoplay" />

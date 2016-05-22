@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<link rel = "stylesheet" type = "text/css" href = "./css/game.css" />
+<link rel = "stylesheet" type = "text/css" href = "./css/question.css" />
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<title>Questions</title>
+</head>
+<body>
+    <div class="game">
+        
+        <div id="0" class="question">
+            <div class="title">What is your name?</div>
+            <p class="subtitle">(Press enter to submit)</p>
+            <div class="buttons">
+            <input type = "text" name = "playerName"
+                 id = "input"
+                 placeholder="Johnny Appleseed"/>
+            </div>
+        </div>
+        <div id="100" class="question" style="display:none;">
+            
+        </div>
+        <div id="1" class="question" style="display:none;">
+            <div class="title">Do you support guns?</div>
+            <div class="buttons">
+            <button id="b1y">Yes</button>
+            <button id="b1n">No</button>
+            <button id="b1e">Evade Question</button>
+            </div>
+        </div>
+        <div id="2" class="question" style="display:none;">
+            <div class="title">Do you support immigration?</div>
+            <div class="buttons">
+            <button id="b2y">Yes</button>
+            <button id="b2n">No</button>
+            <button id="b2e">Evade Question</button>
+            </div>
+        </div>
+        <div id="3" class="question" style="display:none;">
+            <div class="title">Should marijuana be legalized?</div>
+            <div class="buttons">
+            <button id="b3y">Yes</button>
+            <button id="b3n">No</button>
+            <button id="b3e">Evade Question</button>
+            </div>
+        </div>
+        <div id="4" class="question" style="display:none;">
+            <div class="title">Should more money be spent on education?</div>
+            <div class="buttons">
+            <button id="b4y">Yes</button>
+            <button id="b4n">No</button>
+            <button id="b4e">Evade Question</button>
+            </div>
+        </div>
+        <div id="5" class="question" style="display:none;">
+            <div class="title">Are you a U.S. citizen?</div>
+            <div class="buttons">
+            <button id="b5y">Yes</button>
+            <button id="b5n">No</button>
+            <button id="b5e">Evade Question</button>
+            </div>
+        </div>
+    </div>
+
+<script>
+    $('#input').keydown(function(event) {
+    if (event.keyCode == 13) {
+         var v = $('#input').val();
+         document.cookie = "name="+v;
+         $("#0").hide();
+         $("#1").show();
+     }});
+</script>
+<script>
+    var formid;
+    var atkPow = 1;
+    var evade = 1;
+    var luck = 1;
+    var health = 1;
+    var def = 1;
+    
+    $( "button" ).click(function() {
+      var formid  = $( this ).attr('id');
+      $( '#' + formid[1] ).hide()
+      var newid =  parseInt(formid[1])+1;
+      $( '#' + newid ).show()
+      
+      if (formid[1] == 1) {
+          if (formid[2] == 'y') {
+              atkPow ++;
+          } else if (formid[2] == 'n') {
+              def++;
+          } else {
+              evade++;
+          }
+      } 
+      else if (formid[1] == 10) {
+          if (formid[2] == 'y') {
+              health ++;
+          } else if (formid[2] == 'n') {
+              luck++;
+          } else {
+              evade++;
+          }
+      }
+      else if (formid[1] == 2) {
+          if (formid[2] == 'y') {
+              health ++;
+          } else if (formid[2] == 'n') {
+              luck++;
+          } else {
+              evade++;
+          }
+      } else if (formid[1] == 3) {
+          if (formid[2] == 'y') {
+              def ++;
+              luck ++;
+          } else if (formid[2] == 'n') {
+              atkPow++;
+              health++;
+          } else {
+              evade++;
+              evade++;
+          }
+          
+      } else if (formid[1] == 4) {
+          if (formid[2] == 'y') {
+              health ++;
+              health ++;
+          } else if (formid[2] == 'n') {
+              def++;
+              atkPow++;
+          } else {
+              evade++;
+              evade++;
+          }
+          
+      } else {
+          if (formid[2] == 'y') {
+              luck ++;
+              luck ++;
+              luck ++;
+          } else if (formid[2] == 'n') {
+              alert("You can't run for president, retard.");
+              location.replace("./index.html");
+          } else {
+              evade ++;
+              health ++;
+              def ++;
+          }
+          
+          var stats = [atkPow, def, evade, luck, health];
+          document.cookie = "atkPow="+atkPow;
+          document.cookie = "evade="+evade;
+          document.cookie = "luck="+luck;
+          document.cookie = "health="+health;
+          document.cookie = "def="+def;
+          location.replace("./jeb.html");
+      }
+      
+      
+    });
+
+</script>
+
+</body>
+<audio src="8bit.mp3" autoplay="autoplay"/>
+
+</html>

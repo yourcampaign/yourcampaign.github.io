@@ -1,0 +1,7 @@
+.game {
+  position: relative;
+  height: 480px;
+  width: 800px;
+  margin: auto;
+  background-color: #000;
+}

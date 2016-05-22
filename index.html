@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<link rel = "stylesheet" type = "text/css" href = "./css/game.css" />
+<link rel = "stylesheet" type = "text/css" href = "./css/home.css" />
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<title>Campaign</title>
+</head>
+<body>
+    <div class="game">
+        <a class="play" href="./questions.html"><button>Begin your Campaign</button></a>
+        <div class="candidate" style="background:url(./images/jeb.png);">
+        </div>
+    </div>
+</body>
+<audio src="8bit.mp3" autoplay="autoplay" loop="loop"/>
+
+<script type="text/javascript">
+    var p = ['jeb','cruz','hillary', 'bernie', 'trump', 'obama'];
+    var i = 1; 
+    
+    $('.candidate').fadeTo(2000,0,function() {
+                    $('.candidate').css('background-image','url(./images/'+p[1]+'.png');
+                    $('.candidate').fadeTo(2000,1);
+                });
+                
+    function myLoop () {       
+       setTimeout(function () {    
+          if (i < 6) {
+                $('.candidate').fadeTo(2000,0,function() {
+                    $('.candidate').css('background-image','url(./images/'+p[i-1]+'.png');
+                    $('.candidate').fadeTo(2000,1);
+                });
+                myLoop();
+          } else {
+                $('.candidate').fadeTo(2000,0,function() {
+                    $('.candidate').css('background-image','url(./images/'+p[0]+'.png');
+                    $('.candidate').fadeTo(2000,1);
+                });
+                i = 1;
+                myLoop()
+          }
+       }, 5000)
+       i++;           
+    }
+    
+    myLoop(); 
+</script>
+
+</html>
