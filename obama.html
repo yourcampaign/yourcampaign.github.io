@@ -67,6 +67,11 @@
     $("#myHp").text(Math.round(player.hp));
 </script>
 <script>
+$("body").on("domChanged", function () {
+                location.replace("./dezNuts.html");
+            });
+</script>
+<script>
   $( document ).ready(function() {
     $( ".oname" ).text("Obama");
     $( ".olevel" ).text(7);
