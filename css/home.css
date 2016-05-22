@@ -12,6 +12,14 @@
     background-repeat: no-repeat;
 }
 
+.home {
+    background: url(../images/flag.gif);
+    background-size: cover !important;
+    background-repeat: no-repeat;
+    height:600px !important;
+    
+}
+
 .play {
     z-index:10;
     position:absolute;
