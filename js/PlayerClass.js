@@ -85,12 +85,14 @@ class Player {
         var audio = new Audio('../audio/smack.mp3');
         audio.play();
         var r = Math.round(Math.random() * 4);
-        enemy.attack(r);
-        }
+        setTimeout(function(){
+            enemy.attack(r);
+        }, 1500);
+        } // end if else moved already
     }
     
     hit(chance){
-        var evade = chance > Math.random() * 18;
+        var evade = chance > Math.random() * 20 - 5;
         return evade;
     }
     crit(){

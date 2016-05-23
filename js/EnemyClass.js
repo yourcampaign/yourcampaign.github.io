@@ -128,7 +128,7 @@ class Enemy {
     
     
     hit(chance){
-        var evade = chance > Math.random() * 17;
+        var evade = chance > Math.random() * 20 - 5;
         return evade;
     }
     crit(){
