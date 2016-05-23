@@ -13,11 +13,13 @@ class Enemy {
         this.hp = health * 10 + 40;
     }
     update() {
-        if (this.hp < 0) {
+        if (this.hp <= 0) {
             this.hp = 0;
             $("#opHp").text(Math.round(this.hp));
             $('.message').text(this.name + ' lost the game!' );
-            $("body").trigger("domChanged");
+            setTimeout(function(){
+                $("body").trigger("domChanged");
+            }, 2500);
         } else {
             $("#opHp").text(Math.round(this.hp));
         }

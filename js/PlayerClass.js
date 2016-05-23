@@ -10,11 +10,14 @@ class Player {
         this.hp = health * 10 + 40;
     }
     update() {
-        if (this.hp < 0) {
+        if (this.hp <= 0) {
             this.hp = 0;
             $("#myHp").text(Math.round(this.hp));
             $('.message').text('You lost! You\'ll have to do better.' );
-            location.replace("./index.html");
+            setTimeout(function(){
+                location.replace("./index.html");
+            }, 2500);
+        
         } else {
             $("#myHp").text(Math.round(this.hp));
         }
