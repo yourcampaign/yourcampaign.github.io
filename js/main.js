@@ -12,3 +12,21 @@ function getCookie(cname) {
     }
     return "";
 }
+
+document.onkeypress = function (e) { 
+    e = e || window.event; 
+    var charCode = e.charCode || e.keyCode, 
+      c = String.fromCharCode(charCode); 
+    if (c == "1") {
+        player.attack(0, enemy);
+    } else if (c == "2") {
+        player.attack(1, enemy);
+    } else if (c == "3") {
+        player.attack(2, enemy);
+    } else if (c == "4") {
+        player.attack(3, enemy);
+    } else {
+      console.log(c);
+    }
+      
+};

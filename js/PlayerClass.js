@@ -19,15 +19,6 @@ class Player {
             $("#myHp").text(Math.round(this.hp));
         }
     }
-    cont() {
-        if (this.attacked == 1) {
-            var r = Math.round(Math.random() * 4);
-            enemy.attack(r);
-            
-        } else {
-            $('.message').text('You havn\'t moved! Select an attack.');
-        }
-    }
     attack(num, enemy){
         if (this.attacked == 1) {
             $('.message').text('You have already moved! Press continue.');
@@ -93,6 +84,8 @@ class Player {
         enemy.update()
         var audio = new Audio('smack.mp3');
         audio.play();
+        var r = Math.round(Math.random() * 4);
+        enemy.attack(r);
         }
     }
     
