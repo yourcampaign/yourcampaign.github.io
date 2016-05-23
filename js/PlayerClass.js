@@ -82,7 +82,7 @@ class Player {
         enemy.takeDam(damage);
         this.update();
         enemy.update()
-        var audio = new Audio('smack.mp3');
+        var audio = new Audio('../audio/smack.mp3');
         audio.play();
         var r = Math.round(Math.random() * 4);
         enemy.attack(r);

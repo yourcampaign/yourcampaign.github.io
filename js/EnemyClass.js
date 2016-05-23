@@ -122,7 +122,7 @@ class Enemy {
         player.attacked = 0;
         player.update();
         this.update();
-        var audio = new Audio('smack.mp3');
+        var audio = new Audio('../audio/smack.mp3');
         audio.play();
     }
     
