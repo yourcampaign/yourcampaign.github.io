@@ -1,0 +1,46 @@
+.candidate {
+    width:100%;
+    height:100%;
+    background-size:cover !important;
+    position:absolute;
+    z-index:1;
+}
+
+.game {
+    background: url(../images/flag.gif);
+    background-size: cover !important;
+    background-repeat: no-repeat;
+}
+
+.home {
+    background: url(../images/flag.gif);
+    background-size: cover !important;
+    background-repeat: no-repeat;
+    height:600px !important;
+    width:800px !important;
+}
+
+.play {
+    z-index:10;
+    position:absolute;
+    top:60px;
+    left:10px;
+}
+
+.play button {
+    z-index: 0 !important;
+    background: #B91F29;
+    border: 3px solid #F2EFEE;
+    border-radius: 4px;
+    color: #fff;
+    font-family: monospace;
+    font-size: 18px;
+    line-height: 14px;
+    margin: 6px;
+    padding: 16px;
+    outline: none !important;
+}
+
+body {
+    overflow-y: hidden;
+}
